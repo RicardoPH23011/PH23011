@@ -1,6 +1,6 @@
 section .data
-    msg1 db 'Escriba numero 1 (0-255): ',0
-    msg2 db 'Escriba numero 2 (0-255): ',0
+    msg1 db 'Escriba numero 1 : ',0
+    msg2 db 'Escriba numero 2 : ',0
     result_msg db 'Resultado: ',0
     newline db 10,0
 
@@ -16,7 +16,7 @@ _start:
     mov eax, 4
     mov ebx, 1
     mov ecx, msg1
-    mov edx, 27
+    mov edx, 20
     int 0x80
 
     mov eax, 3
@@ -30,7 +30,7 @@ _start:
     mov eax, 4
     mov ebx, 1
     mov ecx, msg2
-    mov edx, 27
+    mov edx, 20
     int 0x80
 
     mov eax, 3
@@ -49,7 +49,7 @@ _start:
     mov eax, 4
     mov ebx, 1
     mov ecx, result_msg
-    mov edx, 11
+    mov edx, 10
     int 0x80
 
     call itoa
